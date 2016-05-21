@@ -1,0 +1,9 @@
+div.metadata {
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+ul.match li{
+  margin-top: 20px;
+  display: inline;
+}
