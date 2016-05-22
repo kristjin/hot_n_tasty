@@ -1,5 +1,4 @@
 import csv
-import requests
 from firebase import firebase
 
 firebase = firebase.FirebaseApplication("https://tastyapp-99fc1.firebaseio.com", None)

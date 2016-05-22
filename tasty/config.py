@@ -1,28 +1,28 @@
 __author__ = 'kristjin@github'
 
-import os
 import ConfigParser
 import io
 
-# This needs to be controlled by moving the file away from the same server somehow.
-cfg = ConfigParser.RawConfigParser(allow_no_value=true)
+# TODO: This needs to be controlled by moving the file away from the same server somehow.
+cfg = ConfigParser.RawConfigParser()
 cfg.read('tasty.cfg')
+
 
 class DevelopmentConfig(object):
     # Tell SQLAlchemy where to find the database
-    # SQLALCHEMY_DATABASE_URI="postgresql://kristjin:CatPowers9@localhost:5432/tasty"
+    SQLALCHEMY_DATABASE_URI = cfg.get("postgreSQL","SQLALCHEMY_DATABASE_URI")
 
-    # Tells Flask to use Debug mode for tracking down errors
-    # DEBUG=True
+    # Tell Flask whether to use Debug mode for tracking down errors
+    DEBUG = cfg.getboolean("flask", "DEBUG")
 
-    # This should go in an external keys file which is part of your .gitignore
-    # OR this file should be included and the key can be here
-    # But never save a file with your secret keys to git, ever, ever
-    # SECRET_KEY = os.environ.get("TASTY_SECRET_KEY", "Avwg@Y@25y6u457ijJ7M*jen5$^^P70rk")
-    # UPLOAD_FOLDER = "uploads"
+    # Provide a secret key for tasty (used by? eh?)
+    SECRET_KEY = cfg.get("tasty","TASTY_SECRET_KEY")
+
+    # Provide an upload folder for tasty (used anywhere at all? I Don't think so.)
+    UPLOAD_FOLDER = cfg.get("tasty", "UPLOAD_FOLDER")
 
 class TestingConfig(object):
-    SQLALCHEMY_DATABASE_URI = "postgresql://kristjin:CatPowers9@localhost:5432/tasty-test"
-    DEBUG = True
-    SECRET_KEY = os.environ.get("TASTY_SECRET_KEY", "Not Secret")
-    UPLOAD_FOLDER = "test-uploads"
+    SQLALCHEMY_DATABASE_URI = cfg.get("testing", "SQLALCHEMY_DATABASE_URI")
+    DEBUG = cfg.getboolean("testing", "DEBUG")
+    SECRET_KEY = cfg.get("testing", "TASTY_SECRET_KEY")
+    UPLOAD_FOLDER = cfg.get("testing", "UPLOAD_FOLDER")
