@@ -1,6 +1,3 @@
-__author__ = 'kristjin@github'
-
-import json
 from flask.ext.login import UserMixin
 
 from sqlalchemy import Column, Integer, String, ForeignKey, Boolean

@@ -1,4 +1,3 @@
-__author__ = 'kristjin@github'
 import json
 from functools import wraps
 

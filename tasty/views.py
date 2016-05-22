@@ -1,5 +1,3 @@
-__author__ = 'kristjin@github'
-import json
 from flask import flash, render_template, request, redirect, url_for
 from flask.ext.login import login_user, logout_user, login_required, current_user
 from werkzeug.security import check_password_hash, generate_password_hash

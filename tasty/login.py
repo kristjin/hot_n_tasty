@@ -1,4 +1,3 @@
-__author__ = 'kristjin@github'
 from flask.ext.login import LoginManager
 
 from tasty import app

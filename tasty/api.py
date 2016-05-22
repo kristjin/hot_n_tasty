@@ -1,5 +1,3 @@
-__author__ = 'kristjin@github'
-
 import json
 from flask import request, Response
 from models import Flavor

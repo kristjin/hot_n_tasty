@@ -1,5 +1,3 @@
-__author__ = 'kristjin@github'
-
 # Import the OS stuffs
 import os
 
@@ -14,11 +12,10 @@ app = Flask(__name__)
 # If none is found, use the default found in tasty.config.DevelopmentConfig
 config_path = os.environ.get("CONFIG_PATH", "tasty.config.DevelopmentConfig")
 
-# Configure the app using the object specified
+# Configure the flask app using the object specified
 app.config.from_object(config_path)
 
 import views
-
 
 from database import Base, engine
 Base.metadata.create_all(engine)
