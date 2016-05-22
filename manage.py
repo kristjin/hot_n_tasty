@@ -1,7 +1,4 @@
-__author__ = 'kristjin@github'
-
 import os
-import json
 
 # Flask-Script Manager class for adding command line arguments easily
 from flask.ext.script import Manager
@@ -13,7 +10,7 @@ from werkzeug.security import generate_password_hash
 from tasty import app
 
 from tasty.models import Flavor, User
-from tasty.database import session, Base
+from tasty.database import session
 
 
 manager = Manager(app)
