@@ -6,7 +6,7 @@ cfg.read('tasty.cfg')
 
 class DevelopmentConfig(object):
     # Tell SQLAlchemy where to find the database
-    SQLALCHEMY_DATABASE_URI = cfg.get("postgreSQL","SQLALCHEMY_DATABASE_URI")
+    SQLALCHEMY_DATABASE_URI = cfg.get("postgreSQL","DATABASE_URI")
     # Tell Flask whether to use Debug mode for tracking down errors
     DEBUG = cfg.getboolean("flask", "DEBUG")
     # Provide a secret key for tasty (used by? eh?)
