@@ -1,6 +1,7 @@
 # tasty
 tasty.cfg
 configtest.py
+/tasty/csvstuff.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
