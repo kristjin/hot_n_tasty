@@ -93,3 +93,9 @@ ENV/
 .ropeproject
 
 # Created by .ignore support plugin (hsz.mobi)
+/tasty/templates/auth_sample.html
+/tasty/templates/tracking_sample.html
+.idea/
+tasty/.idea/codeStyleSettings.xml
+tasty/templates/auth_sample.html
+tasty/templates/tracking_sample.html

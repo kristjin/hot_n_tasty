@@ -5,20 +5,29 @@
 #    reader = csv.DictReader(f)
 #    for row in reader:
 #        print (row['ndb_number'], row['food'])
+import ConfigParser
 
-from firebase import firebase
-auth = firebase.FirebaseAuthentication('FIREBASE_SECRET', 'firebase@firebase.com')
-firebase = firebase.FirebaseApplication('https://tastyapp-99fc1.firebaseio.com', auth)
-result = firebase.get('/users', auth)
+cfg = ConfigParser.RawConfigParser()
+cfg.read('tasty.cfg')
+FIREBASE_SECRET = cfg.get("firebase", "secret")
+
+
+from firebase import firebase as fb
+
+auth = fb.FirebaseAuthentication(FIREBASE_SECRET, 'shithead@ssss.com')
+fb.authentication = auth
+print auth.extra
+
+tastydb = fb.FirebaseApplication('https://tastyapp-99fc1.firebaseio.com', auth)
+
+result = tastydb.get('/matchlist', None)
+print "The get result of all /matchlist is:"
 print result
 
-json_dict = firebase.get('/users', '1', {'print': 'pretty'})
-print json_dict
-
-
-user = authentication.get_user()
+user = auth.get_user()
 print user.firebase_auth_token
+print user.email
+print user.id
+print user.provider
 
 
-result = firebase.get('/users', None, {'print': 'pretty'})
-print result

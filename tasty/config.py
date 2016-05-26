@@ -1,8 +1,7 @@
 import ConfigParser
 
 cfg = ConfigParser.RawConfigParser()
-cfg.read('tasty.cfg')
-
+cfg.read('./tasty/tasty.cfg')
 
 class DevelopmentConfig(object):
     # Tell SQLAlchemy where to find the database
