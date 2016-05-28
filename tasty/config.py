@@ -10,7 +10,7 @@ class DevelopmentConfig(object):
     DEBUG = cfg.getboolean("flask", "DEBUG")
     # Provide a secret key for tasty (used by? eh?)
     SECRET_KEY = cfg.get("tasty","TASTY_SECRET_KEY")
-
+    FIREBASE_SECRET = cfg.get("firebase", "secret")
 
 class TestingConfig(object):
     SQLALCHEMY_DATABASE_URI = cfg.get("testing", "SQLALCHEMY_DATABASE_URI")
