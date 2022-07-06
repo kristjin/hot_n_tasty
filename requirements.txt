@@ -21,7 +21,7 @@ decorator==3.4.0
 defusedxml==0.4.1
 docutils==0.12
 gunicorn==19.3.0
-html5lib==0.999
+html5lib==0.999999999
 ipython==3.0.0
 itsdangerous==0.24
 jsonschema==2.4.0
